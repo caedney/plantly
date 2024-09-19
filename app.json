@@ -27,7 +27,17 @@
       "favicon": "./assets/favicon.png",
       "bundler": "metro"
     },
-    "plugins": ["expo-router"],
+    "plugins": [
+      "expo-router",
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "node_modules/@expo-google-fonts/caveat/Caveat_400Regular.ttf"
+          ]
+        }
+      ]
+    ],
     "extra": {
       "eas": {
         "projectId": "b0c9b2da-fda4-4fff-aef6-15e2e0a4cbda"
