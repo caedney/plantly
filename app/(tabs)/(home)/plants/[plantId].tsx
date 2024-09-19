@@ -13,12 +13,20 @@ export default function PlantDetails() {
   const router = useRouter();
   const waterPlant = usePlantStore((store) => store.waterPlant);
   const removePlant = usePlantStore((store) => store.removePlant);
-  const params = useLocalSearchParams();
-  const plantId = params.plantId;
+  const { action, plantId } = useLocalSearchParams();
   const plant = usePlantStore((state) =>
     state.plants.find((plant) => String(plant.id) === plantId)
   );
   const navigation = useNavigation();
+
+  useEffect(() => {
+    if (action === 'water') {
+      if (typeof plantId === 'string') {
+        waterPlant(plantId);
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     navigation.setOptions({
