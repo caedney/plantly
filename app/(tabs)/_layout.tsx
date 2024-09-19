@@ -8,6 +8,7 @@ export default function Layout() {
   const onboarded = useUserStore((state) => state.onboarded);
 
   if (!onboarded) {
+    // SplashScreen.hideAsync();
     return <Redirect href="/onboarding" />;
   }
 
