@@ -25,8 +25,7 @@ export default function PlantDetails() {
         waterPlant(plantId);
       }
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [action, plantId, waterPlant]);
 
   useEffect(() => {
     navigation.setOptions({
